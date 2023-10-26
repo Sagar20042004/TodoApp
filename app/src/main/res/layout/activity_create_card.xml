@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:background="@drawable/gradient"
+    android:padding="20dp"
+    tools:context=".Activity_create_card"
+    >
+
+   <TextView
+       android:layout_width="wrap_content"
+       android:layout_height="wrap_content"
+       android:text="Enter Detaiile"
+       android:textSize="30sp"
+       android:textColor="@color/design_default_color_on_secondary"
+       android:textStyle="bold">
+
+   </TextView>
+
+    <EditText
+        android:id="@+id/editText_task"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Enter task"
+        android:textColorHint="@color/black"
+        android:padding="15dp"
+        android:textColor="@color/design_default_color_on_secondary"
+        android:layout_marginTop="30dp"
+        android:textSize="20sp">
+
+    </EditText>
+
+
+    <EditText
+        android:id="@+id/editText_priority"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Priority"
+        android:padding="15dp"
+        android:textColorHint="@color/black"
+        android:textColor="@color/design_default_color_on_secondary"
+        android:layout_marginTop="30dp"
+        android:textSize="20sp">
+
+    </EditText>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Save"
+        android:layout_marginTop="30dp"
+        android:textSize="20sp">
+
+    </Button>
+
+</LinearLayout>

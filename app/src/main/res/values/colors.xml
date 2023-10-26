@@ -8,4 +8,9 @@
     <color name="mid_color">#6DD5FA</color>
     <color name="end_color">#FFFFFF</color>
 
+<!--    button color-->
+    <color name="button_color">#87CEEB</color>
+
+<!--    edit text color-->
+    <color name="edit_text">#49DCB1</color>
 </resources>
