@@ -32,7 +32,7 @@ class Adapter(var data: List<CardInfo>) : RecyclerView.Adapter<Adapter.viewHolde
         when (data[position].priority.toLowerCase()) {
             "high" -> holder.layout.setBackgroundColor(Color.parseColor("#F05454"))
             "medium" -> holder.layout.setBackgroundColor(Color.parseColor("#EDC988"))
-            else -> holder.layout.setBackgroundColor(Color.parseColor("#EDC988"))
+            else -> holder.layout.setBackgroundColor(Color.parseColor("#90EE90"))
         }
 
 

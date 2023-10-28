@@ -21,11 +21,13 @@ class MainActivity : AppCompatActivity() {
 
         deleteAllBt.setOnClickListener {
             DataObject.deleteAll()
+            setRecycler()
         }
+        setRecycler()
+    }
 
-        recycler_view.adapter=Adapter(DataObject.getAllData())
-        recycler_view.layoutManager=LinearLayoutManager(this)
-
-
+    fun setRecycler() {
+        recycler_view.adapter = Adapter(DataObject.getAllData())
+        recycler_view.layoutManager = LinearLayoutManager(this)
     }
 }
