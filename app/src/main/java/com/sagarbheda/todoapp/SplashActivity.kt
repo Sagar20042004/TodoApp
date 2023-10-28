@@ -24,11 +24,10 @@ class SplashActivity : AppCompatActivity() {
 
         frameAnimation.start()
 
-        Handler(Looper.getMainLooper()).postDelayed({
+         Handler(Looper.getMainLooper()).postDelayed({
             val intent = Intent(this, MainActivity::class.java)
             startActivity(intent)
-            finish()
-        }, 3000)
+        },3000)
 
     }
 }
