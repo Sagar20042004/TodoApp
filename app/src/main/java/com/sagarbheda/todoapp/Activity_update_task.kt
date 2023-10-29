@@ -4,17 +4,26 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
+import androidx.room.Room
 import kotlinx.android.synthetic.main.activity_update_task.create_priority
 import kotlinx.android.synthetic.main.activity_update_task.create_title
 import kotlinx.android.synthetic.main.activity_update_task.delete_button
 import kotlinx.android.synthetic.main.activity_update_task.update_button
 import kotlinx.android.synthetic.main.each_rv.view.priority
 import kotlinx.android.synthetic.main.each_rv.view.title
+import kotlinx.coroutines.GlobalScope
+import kotlinx.coroutines.launch
 
 class Activity_update_task : AppCompatActivity() {
+
+    private lateinit var database: myDatabase
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_update_task)
+
+        database = Room.databaseBuilder(
+            applicationContext, myDatabase::class.java, "To_Do"
+        ).build()
 
         val pos = intent.getIntExtra("id", -1)
         if (pos != -1) {
@@ -27,6 +36,17 @@ class Activity_update_task : AppCompatActivity() {
 
             delete_button.setOnClickListener {
                 DataObject.deleteData(pos)
+
+                GlobalScope.launch {
+                    database.dao().deleteTask(
+                        Entity(
+                            pos + 1,
+                            create_title.text.toString(),
+                            create_priority.text.toString()
+                        )
+                    )
+                }
+
                 myIntent()
             }
 
@@ -36,7 +56,19 @@ class Activity_update_task : AppCompatActivity() {
                     create_title.text.toString(),
                     create_priority.text.toString()
                 )
-                Toast.makeText(this,title+" "+priority,Toast.LENGTH_LONG).show()
+
+                GlobalScope.launch {
+                    database.dao().updateTask(
+                        Entity(
+                            pos + 1,
+                            create_title.text.toString(),
+                            create_priority.text.toString()
+                        )
+                    )
+                }
+
+
+                Toast.makeText(this, title + " " + priority, Toast.LENGTH_LONG).show()
                 myIntent()
             }
         }
