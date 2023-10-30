@@ -1,6 +1,8 @@
 # TodoApp
 Splash Activity
 
+DESCRIPTION
+
 This is basically TODO list app and with this app i were add first splesh screen in which there are one animation added.
 When app starts first spleh screen is active and animation is start.
 After the main screen will occur. In this app first you need to add some task as per your wish.
@@ -11,6 +13,14 @@ We also can delete the task and there are a single button on the top with text "
 And in this app there is a ROOM DATABASE is used.
 by this at once you add the task and then close the app and when you again opne the app so all the privious task is there.
 All the data is  in the data base.
+
+FUNCTIONALITY : 
+
+Adding new tasks to the list.
+Deleting tasks from the list.
+Updating tasks (optional).
+Marking tasks as complete or incomplete.
+
 
 
 # IMAGES:
